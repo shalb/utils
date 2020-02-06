@@ -34,8 +34,9 @@ def get_logs(org, repo, job_id, headers):
     Continiosly grub logs
     """
     old_logs = []
-    no_logs = 0 # seconds
+    no_logs = 0 # iterations
     second_sleep = 3
+
     while True:
         url = f'https://api.github.com/repos/{org}/{repo}/actions/jobs/{job_id}/logs'
         r = requests.get(url, headers=headers)
@@ -48,7 +49,7 @@ def get_logs(org, repo, job_id, headers):
         else:
             no_logs += 1 # iterations
 
-        if no_logs > 10: # 10 iterations
+        if no_logs > 10: # iterations
             break
 
         old_logs = logs
