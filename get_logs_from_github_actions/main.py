@@ -46,6 +46,7 @@ def get_logs(org, repo, job_id, headers):
 
         if len(difference):
             print('\n'.join(difference))
+            no_logs = 0
         else:
             no_logs += 1 # iterations
 
