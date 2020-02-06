@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
-import os
-
-github_token = os.environ['GITHUB_TOKEN']
+github_token = ''
 org = 'shalb'
 repo = 'cluster.dev'
 workflow_filename = 'gh-5.yaml'
 
-
+"""
+Advanced settings
+"""
 enable_sleep_logs = True
 
 job_logs_update_interval = 3
